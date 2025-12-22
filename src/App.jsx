@@ -2,8 +2,9 @@ import { useEffect, useState, useRef } from "react";
 import { useDebounce } from "react-use";
 import Trailer from "./components/Trailer.jsx";
 import Search from "./components/Search.jsx";
+
 import Loader from "./components/Loader.jsx";
-import MovieCard from "./components/Moviecard.jsx";
+import MovieCard from "./components/MovieCard.jsx";
 import { Routes, Route } from "react-router-dom";
 import MoviePage from "./components/MoviePage.jsx";
 
@@ -22,7 +23,6 @@ const API_OPTIONS = {
 
 const Home = () => {
   const topRef = useRef(null);
-
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
   const [movieList, setMovieList] = useState([]);
@@ -85,8 +85,6 @@ const Home = () => {
 
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           </header>
-
-      
 
           {trendingMovies.length > 0 && (
             <section className="trending">
