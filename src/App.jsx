@@ -1,18 +1,16 @@
 import { useEffect, useState, useRef } from "react";
 import { useDebounce } from "react-use";
-import Trailer from "./components/Trailer.jsx";
-import Search from "./components/Search.jsx";
-
-import Loader from "./components/Loader.jsx";
-import MovieCard from "./components/MovieCard.jsx";
+import Trailer from "./components/Trailer";
+import Search from "./components/Search";
+import Loader from "./components/Loader/Loader.jsx";
+import MovieCard from "./components/MovieCard";
 import { Routes, Route } from "react-router-dom";
-import MoviePage from "./components/MoviePage.jsx";
+import MoviePage from "./components/MoviePage";
 
 import { getTrendingMovies, updateSearchCount } from "./components/appwrite.js";
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-
 const API_OPTIONS = {
   method: "GET",
   headers: {
